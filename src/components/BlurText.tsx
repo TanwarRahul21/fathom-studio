@@ -4,9 +4,10 @@ import { motion } from 'framer-motion'
 interface BlurTextProps {
   text: string
   className?: string
+  highlightLastWord?: boolean
 }
 
-export default function BlurText({ text, className = '' }: BlurTextProps) {
+export default function BlurText({ text, className = '', highlightLastWord = false }: BlurTextProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -38,7 +39,11 @@ export default function BlurText({ text, className = '' }: BlurTextProps) {
             delay: i * 0.1,
             ease: 'easeOut',
           }}
-          style={{ display: 'inline-block', marginRight: '0.25em' }}
+          style={{ 
+            display: 'inline-block', 
+            marginRight: '0.25em',
+            color: highlightLastWord && i === words.length - 1 ? 'var(--accent)' : undefined
+          }}
         >
           {word}
         </motion.span>

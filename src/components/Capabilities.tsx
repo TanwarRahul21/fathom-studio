@@ -40,7 +40,7 @@ export default function Capabilities() {
           <p className="text-sm text-white/80 font-body mb-3 tracking-widest uppercase">
             // What We Do
           </p>
-          <h2 className="text-6xl md:text-7xl lg:text-[6rem] font-heading italic text-white leading-[0.9] tracking-[-3px] mb-0">
+          <h2 className="text-6xl md:text-7xl lg:text-[6rem] font-heading italic text-white leading-[0.9] tracking-[-1px] mb-0">
             <BlurText text="Design, Build, Grow" />
           </h2>
         </Reveal>

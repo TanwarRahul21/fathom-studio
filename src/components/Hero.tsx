@@ -86,7 +86,10 @@ export default function Hero() {
         {/* ── Navbar ───────────────────────────────────── */}
         <nav className="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 lg:px-16 flex items-center justify-between">
           {/* Logo */}
-          <div className="liquid-glass rounded-2xl h-12 w-12 flex items-center justify-center flex-shrink-0">
+          <div 
+            className="liquid-glass rounded-2xl h-12 w-12 flex items-center justify-center flex-shrink-0 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <span className="font-heading italic text-2xl text-white leading-none">F</span>
           </div>
 
@@ -150,8 +153,8 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.85] tracking-[-3px] max-w-3xl mb-6">
-            <BlurText text="Interfaces That Age Like Architecture" />
+          <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.85] tracking-[-1px] max-w-3xl mb-6">
+            <BlurText text="Interfaces That Age Like Architecture" highlightLastWord />
           </h1>
 
           {/* Subtext */}
@@ -204,20 +207,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── Trust Bar ────────────────────────────────── */}
-        <motion.div
-          {...fadeUp(1.4)}
-          className="relative z-10 px-4 md:px-8 pb-6 flex justify-center"
-        >
-          <div className="liquid-glass rounded-full px-6 py-3 flex items-center gap-4 flex-wrap justify-center max-w-2xl">
-            <span className="text-xs text-white/60 font-body">Trusted by teams building products people actually enjoy using</span>
-            <div className="flex items-center gap-5">
-              {['Solace', 'Kepler', 'Marrow', 'Northfield', 'Ivory Lane'].map((name) => (
-                <span key={name} className="font-heading italic text-white/50 text-base whitespace-nowrap">{name}</span>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </section>
     </>
   )
